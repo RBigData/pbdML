@@ -53,7 +53,7 @@ rsvd <- function(x, k=1, q=3, retu=TRUE, retvt=TRUE)
   
   if (class(x) == "matrix")
     Omega <- matrix(rnorm(n*2L*k), nrow=n, ncol=2L*k)
-  else if class(x) == "ddmatrix")
+  else if (class(x) == "ddmatrix")
     Omega <- ddmatrix("rnorm", nrow=n, ncol=2L*k, bldim=x@bldim, ICTXT=x@ICTXT)
   
   Y <- x %*% Omega
