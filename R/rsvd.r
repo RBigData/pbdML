@@ -22,9 +22,15 @@
 #' randomness: probabilistic algorithms for constructing approximate
 #' matrix decompositions. SIAM Review 53 217-288.
 #' 
+#' @keywords SVD PCA
+#' @name rsvd
+#' @rdname rsvd
 #' @export
 rsvd <- function(x, k=1, q=3, retu=TRUE, retvt=TRUE)
 {
+  if (class(x) != "ddmatrix")
+    x <- as.matrix(x)
+  
   ### Cheap checks first
   assert.type(retu, "logical")
   assert.type(retvt, "logical")
@@ -45,7 +51,11 @@ rsvd <- function(x, k=1, q=3, retu=TRUE, retvt=TRUE)
   q <- as.integer(q)
   n <- ncol(x)
   
-  Omega <- matrix(rnorm(n*2L*k), nrow=n, ncol=2L*k)
+  if (class(x) == "matrix")
+    Omega <- matrix(rnorm(n*2L*k), nrow=n, ncol=2L*k)
+  else if class(x) == "ddmatrix")
+    Omega <- ddmatrix("rnorm", nrow=n, ncol=2L*k, bldim=x@bldim, ICTXT=x@ICTXT)
+  
   Y <- x %*% Omega
   Q <- qr.Q(qr(Y))
   tx <- t(x)
