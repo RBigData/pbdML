@@ -1,4 +1,20 @@
-# Copyright 2014-2015, Schmidt and Ostrouchov
+rsvd.checkargs <- function(k, q, retu, retvt)
+{
+  assert.type(retu, "logical")
+  assert.type(retvt, "logical")
+  
+  assert.natnum(k)
+  if (k > nrow(x))
+    comm.stop("'k' must be no greater than nrow(x)")
+  
+  assert.natnum(q)
+  
+  ### TODO check for NA, NaN, Inf
+  
+  invisible(TRUE)
+}
+
+
 
 #' Random SVD
 #' 
@@ -28,27 +44,16 @@
 #' @export
 rsvd <- function(x, k=1, q=3, retu=TRUE, retvt=TRUE)
 {
+  rsvd.checkargs(k=k, q=q, retu=retu, retvt=retvt)
+  
   if (class(x) != "ddmatrix")
     x <- as.matrix(x)
   
-  ### Cheap checks first
-  assert.type(retu, "logical")
-  assert.type(retvt, "logical")
-  
-  assert.natnum(k)
   k <- as.integer(k)
-  if (k > nrow(x))
-    stop("'k' must be no greater than nrow(x)")
-  
-  assert.natnum(q)
   q <- as.integer(q)
   
-  assert.type(x, "numeric")
-  
-  ### TODO check for NA, NaN, Inf
   
   ### Stage A from the paper
-  q <- as.integer(q)
   n <- ncol(x)
   
   if (class(x) == "matrix")
@@ -84,6 +89,9 @@ rsvd <- function(x, k=1, q=3, retu=TRUE, retvt=TRUE)
   
   svd.B <- La.svd(x=B, nu=nu, nv=nv)
   
+  d <- svd.B$d
+  d <- d[1L:k]
+  
   
   # Produce u/vt as desired
   if (retu)
@@ -91,9 +99,6 @@ rsvd <- function(x, k=1, q=3, retu=TRUE, retvt=TRUE)
     u <- svd.B$u
     u <- Q %*% u
     
-    d <- svd.B$d
-    
-    d <- d[1L:k]
     u <- u[, 1L:k]
   }
   
