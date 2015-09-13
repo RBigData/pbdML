@@ -1,0 +1,13 @@
+*.in
+*.o
+*.so
+*.log
+*.status
+*~
+*.swp
+
+*.aux
+*.bbl
+*.blg
+*.out
+*.toc
