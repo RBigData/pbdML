@@ -14,22 +14,18 @@ TODO
 TODO
 
 
+
 ## Installation
 
-pbdDMAT requires
+pbdML requires
 * A system installation of MPI
 * R version 2.14.0 or higher
 * The pbdMPI, pbdDMAT packages, as well as their dependencies.
 
-The package can be installed from the CRAN via the usual
-`install.packages("pbdDMAT")`, or via the devtools package:
-
 ```r
 library(devtools)
-install_github("wrathematics/pbdDMAT")
+install_github("wrathematics/pbdML")
 ```
-
-See the vignette for installation troubleshooting.
 
 
 
