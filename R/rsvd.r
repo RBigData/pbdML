@@ -1,4 +1,4 @@
-rsvd.checkargs <- function(k, q, retu, retvt)
+rsvd.checkargs <- function(x, k, q, retu, retvt)
 {
   assert.type(retu, "logical")
   assert.type(retvt, "logical")
@@ -44,7 +44,7 @@ rsvd.checkargs <- function(k, q, retu, retvt)
 #' @export
 rsvd <- function(x, k=1, q=3, retu=TRUE, retvt=TRUE)
 {
-  rsvd.checkargs(k=k, q=q, retu=retu, retvt=retvt)
+  rsvd.checkargs(x=x, k=k, q=q, retu=retu, retvt=retvt)
   
   if (class(x) != "ddmatrix")
     x <- as.matrix(x)

@@ -27,7 +27,7 @@ rpca <- function(x, k=1, q=3, retx=TRUE, center=TRUE, scale=FALSE)
   assert.type(center, "logical")
   assert.type(scale, "logical")
   
-  rsvd.checkargs(k=k, q=q, retu=FALSE, retvt=TRUE)
+  rsvd.checkargs(x=x, k=k, q=q, retu=FALSE, retvt=TRUE)
   
   assert.type(x, "numeric")
   
