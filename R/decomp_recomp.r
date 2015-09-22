@@ -36,13 +36,15 @@
 decomp_recomp <- function(x, exclude, center=TRUE, scale=FALSE)
 {
   if (class(x) != "matrix" && class(x) != "ddmatrix")
-    comm.stop("TODO")
+    comm.stop("Argument 'x' must be of class 'matrix' or 'ddmatrix'")
   
   if (any(exclude < 1))
     comm.stop("positive")
+ 
+  assert.type(center, "logical")
+  assert.type(scale, "logical")
   
-  ### TODO check center, scale types
-  
+
   if (center || scale)
     x <- scale(x, center=center, scale=scale)
   
@@ -52,7 +54,7 @@ decomp_recomp <- function(x, exclude, center=TRUE, scale=FALSE)
   d <- svd$d
   vt <- svd$vt
   
-  ud <- sweep(u[, -exclude], MARGIN=2, FUN="*", STAT=d[-exclude])
+  ud <- sweep(u[, -exclude], MARGIN=2, FUN="*", STATS=d[-exclude])
   ud %*% vt[-exclude, ]
 }
 
