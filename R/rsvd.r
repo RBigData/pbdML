@@ -99,12 +99,12 @@ rsvd <- function(x, k=1, q=3, retu=TRUE, retvt=TRUE)
     u <- svd.B$u
     u <- Q %*% u
     
-    u <- u[, 1L:k]
+    u <- u[, 1L:k, drop=FALSE]
   }
   
   if (retvt)
   {
-    vt <- svd.B$vt[1L:k, ]
+    vt <- svd.B$vt[1L:k, , drop=FALSE]
   }
   
   # wrangle return
