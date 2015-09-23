@@ -24,6 +24,9 @@ left and/or right singular vectors.
 \description{
 Random SVD
 }
+\author{
+George Ostrouchov and Drew Schmidt
+}
 \references{
 Halko, Martinsson, and Tropp. 2011. Finding structure with
 randomness: probabilistic algorithms for constructing approximate

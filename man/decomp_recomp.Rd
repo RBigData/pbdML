@@ -36,6 +36,9 @@ decomp_recomp(x, 1)
 finalize()
 }
 }
+\author{
+Drew Schmidt and Ahmed Moustafa
+}
 \references{
 Inspired by a question from Ahmed Moustafa: \url{https://twitter.com/AhmedMoustafa/status/646310686725812224}
 }

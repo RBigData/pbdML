@@ -23,6 +23,9 @@ An object of class \code{prcomp}.
 \description{
 Random PCA
 }
+\author{
+Drew Schmidt
+}
 \keyword{PCA}
 \keyword{SVD}
 

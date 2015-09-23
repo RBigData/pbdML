@@ -9,7 +9,8 @@ NeedsCompilation: yes
 Authors@R: c(person("Drew", "Schmidt", role = c("aut", "cre"), email =
     "schmidt@math.utk.edu"), 
     person("George", "Ostrouchov", role = "aut"),
-    person("Wei-Chen", "Chen", role = "aut"))
+    person("Wei-Chen", "Chen", role = "aut"), 
+    person("Ahmed", "Moustafa", role="ctb"))
 Description: TODO
 License: BSD + file LICENSE
 URL: http://r-pbd.org/

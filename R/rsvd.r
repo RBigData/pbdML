@@ -38,6 +38,9 @@ rsvd.checkargs <- function(x, k, q, retu, retvt)
 #' randomness: probabilistic algorithms for constructing approximate
 #' matrix decompositions. SIAM Review 53 217-288.
 #' 
+#' @author
+#' George Ostrouchov and Drew Schmidt
+#' 
 #' @keywords SVD PCA
 #' @name rsvd
 #' @rdname rsvd

@@ -14,6 +14,9 @@
 #' @return
 #' An object of class \code{prcomp}.
 #' 
+#' @author
+#' Drew Schmidt
+#' 
 #' @keywords SVD PCA
 #' @name rpca
 #' @rdname rpca

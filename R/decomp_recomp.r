@@ -19,6 +19,9 @@
 #' @references
 #' Inspired by a question from Ahmed Moustafa: \url{https://twitter.com/AhmedMoustafa/status/646310686725812224}
 #' 
+#' @author
+#' Drew Schmidt and Ahmed Moustafa
+#' 
 #' @examples
 #' \dontrun{
 #' ## TODO add mpirun message boilerplate
