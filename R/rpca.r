@@ -15,8 +15,23 @@
 #' @return
 #' An object of class \code{prcomp}.
 #' 
+#' @references
+#' Halko, Martinsson, and Tropp. 2011. Finding structure with 
+#' randomness: probabilistic algorithms for constructing approximate
+#' matrix decompositions. SIAM Review 53 217-288.
+#' 
+#' Duda, R. O., Hart, P. E., & Stork, D. G. (2012). Pattern classification,
+#' chapter 10. John Wiley & Sons.
+#' 
 #' @author
 #' Drew Schmidt
+#' 
+#' @examples
+#' \dontrun{
+#' x <- matrix(rnorm(30), 10)
+#' 
+#' rpca(x)
+#' }
 #' 
 #' @keywords SVD PCA
 #' @name rpca

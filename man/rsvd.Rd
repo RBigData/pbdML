@@ -25,6 +25,13 @@ left and/or right singular vectors.
 \description{
 Random SVD
 }
+\examples{
+\dontrun{
+x <- matrix(rnorm(30), 10)
+
+rsvd(x)
+}
+}
 \author{
 George Ostrouchov and Drew Schmidt
 }

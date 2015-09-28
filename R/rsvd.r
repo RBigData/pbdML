@@ -42,6 +42,13 @@ rsvd.checkargs <- function(x, k, q, retu, retvt)
 #' @author
 #' George Ostrouchov and Drew Schmidt
 #' 
+#' @examples
+#' \dontrun{
+#' x <- matrix(rnorm(30), 10)
+#' 
+#' rsvd(x)
+#' }
+#' 
 #' @keywords SVD PCA
 #' @name rsvd
 #' @rdname rsvd

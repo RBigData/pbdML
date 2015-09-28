@@ -36,4 +36,11 @@ g <- sample(0:1, size=10, replace=TRUE)
 fld(x, g)
 }
 }
+\author{
+Drew Schmidt
+}
+\references{
+Duda, R. O., Hart, P. E., & Stork, D. G. (2012). Pattern classification,
+chapter 5. John Wiley & Sons.
+}
 

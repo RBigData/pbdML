@@ -21,6 +21,13 @@
 #' w vector, and c scalar.  In the distributed case, the priors and c scalar
 #' are both global, while the other values are distributed.
 #' 
+#' @references
+#' Duda, R. O., Hart, P. E., & Stork, D. G. (2012). Pattern classification,
+#' chapter 5. John Wiley & Sons.
+#' 
+#' @author
+#' Drew Schmidt
+#' 
 #' @examples
 #' \dontrun{
 #' x <- matrix(rnorm(30), 10)
