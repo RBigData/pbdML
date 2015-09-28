@@ -98,7 +98,6 @@ fld <- function(x, g, checkg=TRUE)
 
 
 
-#' @name print-fld
 #' @method print fld
 #' @export
 print.fld <- function(x, ...)
