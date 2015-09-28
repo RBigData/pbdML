@@ -2,8 +2,9 @@ Package: pbdML
 Title: Programming with Big Data -- Machine Learning
 Version: 0.1-0
 Depends: R (>= 3.0.0), 
-  pbdMPI (>= 0.3-0), 
-  pbdDMAT (>= 0.4-0)
+    pbdMPI (>= 0.3-0), 
+    pbdDMAT (>= 0.4-0)
+Imports: stats
 ByteCompile: yes
 NeedsCompilation: yes
 Authors@R: c(person("Drew", "Schmidt", role = c("aut", "cre"), email =

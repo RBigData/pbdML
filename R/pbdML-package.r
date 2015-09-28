@@ -11,7 +11,8 @@
 #' 
 #' This package requires an MPI library (OpenMPI, MPICH2, or LAM/MPI).
 #' 
-#' @importFrom pbdMPI comm.stop
+#' @importFrom pbdMPI comm.stop comm.print comm.cat
+#' @importFrom stats rnorm
 #' @import pbdDMAT
 #' 
 #' @name pbdML-package
