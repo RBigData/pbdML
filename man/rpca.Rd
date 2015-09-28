@@ -9,11 +9,12 @@ rpca(x, k = 1, q = 3, retx = TRUE, center = TRUE, scale = FALSE)
 \arguments{
 \item{x}{The input data matrix.}
 
-\item{k}{}
+\item{k}{The number of singular values and/or left/right singular vectors
+to estimate.}
 
-\item{q}{}
+\item{q}{An integer exponent, say 1, 2, or 3.  See the paper for details.}
 
-\item{retx}{}
+\item{retx}{Logical;  determines if the rotated data should be returned.}
 
 \item{center,scale}{Logical; determines if the data should be centered/scaled first.}
 }

@@ -21,9 +21,10 @@ rsvd.checkargs <- function(x, k, q, retu, retvt)
 #' @param x
 #' The input data matrix.
 #' @param k
-#' 
+#' The number of singular values and/or left/right singular vectors
+#' to estimate.
 #' @param q
-#' 
+#' An integer exponent, say 1, 2, or 3.  See the paper for details.
 #' @param retu
 #' Logical; should the left singular vectors ("U") be returned?
 #' @param retvt

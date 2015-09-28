@@ -9,9 +9,10 @@ rsvd(x, k = 1, q = 3, retu = TRUE, retvt = TRUE)
 \arguments{
 \item{x}{The input data matrix.}
 
-\item{k}{}
+\item{k}{The number of singular values and/or left/right singular vectors
+to estimate.}
 
-\item{q}{}
+\item{q}{An integer exponent, say 1, 2, or 3.  See the paper for details.}
 
 \item{retu}{Logical; should the left singular vectors ("U") be returned?}
 

@@ -3,11 +3,12 @@
 #' @param x
 #' The input data matrix.
 #' @param k
-#' 
+#' The number of singular values and/or left/right singular vectors
+#' to estimate.
 #' @param q
-#' 
+#' An integer exponent, say 1, 2, or 3.  See the paper for details.
 #' @param retx
-#' 
+#' Logical;  determines if the rotated data should be returned.
 #' @param center,scale
 #' Logical; determines if the data should be centered/scaled first.
 #' 
