@@ -19,7 +19,7 @@ Description: A collection of machine learning utilities that can
     performance (i.e., all code is written in R), and as such this
     package should primarily be thought of as a demonstration of the
     capabilities of the 'pbdDMAT' package.
-License: BSD + file LICENSE
+License: BSD 2-clause License + file LICENSE
 URL: http://r-pbd.org/
 BugReports: http://group.r-pbd.org/
 MailingList: Please send questions and comments regarding pbdR to
