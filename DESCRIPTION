@@ -1,10 +1,12 @@
 Package: pbdML
 Title: Programming with Big Data -- Machine Learning
 Version: 0.1-0
-Depends: R (>= 3.0.0), 
-    pbdMPI (>= 0.3-0), 
+Depends:
+    R (>= 3.0.0),
+    pbdMPI (>= 0.3-0),
     pbdDMAT (>= 0.4-0)
-Imports: stats
+Imports:
+    stats
 ByteCompile: yes
 NeedsCompilation: yes
 Authors@R: c(person("Drew", "Schmidt", role = c("aut", "cre"), email =
@@ -23,5 +25,6 @@ License: BSD 2-clause License + file LICENSE
 URL: http://r-pbd.org/
 BugReports: http://group.r-pbd.org/
 MailingList: Please send questions and comments regarding pbdR to
-        RBigData@gmail.com
+    RBigData@gmail.com
 Maintainer: Drew Schmidt <schmidt@math.utk.edu>
+RoxygenNote: 5.0.1
