@@ -11,7 +11,7 @@
 #' 
 #' This package requires an MPI library (OpenMPI, MPICH2, or LAM/MPI).
 #' 
-#' @importFrom pbdMPI comm.stop comm.print comm.cat
+#' @importFrom pbdMPI comm.stop comm.print comm.cat comm.all
 #' @importFrom stats rnorm
 #' @import pbdDMAT
 #' 
