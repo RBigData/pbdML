@@ -6,8 +6,4 @@
 *~
 *.swp
 
-*.aux
-*.bbl
-*.blg
-*.out
-*.toc
+*.html

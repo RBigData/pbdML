@@ -1,0 +1,58 @@
+---
+title: "Guide to the pbdML Package"
+author: "Drew Schmidt"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    fig_caption: true
+    toc: true
+    number_sections: true
+    css: include/custom.css
+    highlight: kate
+bibliography: include/pbdML.bib
+csl: "include/ieee.csl"
+vignette: >
+  %\VignetteIndexEntry{Guide to the pbdML Package}
+  %\VignetteEngine{knitr::rmarkdown}
+---
+
+# Introduction
+
+[[@pbdR2012]]
+
+
+## Installation
+
+You can install the stable version from CRAN using the usual `install.packages()`:
+
+```r
+install.packages("pbdML")
+```
+
+The development version is maintained on GitHub.  You can install this version using the `devtools` package:
+
+```r
+devtools::install_github("RBigData/pbdML")
+```
+
+
+
+
+# Legal
+
+&copy; 2016 Drew Schmidt.
+
+Permission is granted to make and distribute verbatim copies of this vignette and its source provided the copyright notice and this permission notice are preserved on all copies.
+
+Work for the **remoter** package is supported in part by the project *Harnessing Scalable Libraries for Statistical Computing on Modern Architectures and Bringing Statistics to Large Scale Computing* funded by the National Science Foundation Division of Mathematical Sciences under Grant No. 1418195.
+
+Any opinions, findings, and conclusions or recommendations expressed in  this material are those of the authors and do not necessarily reflect the  views of the National Science Foundation.  The findings and conclusions in this article have not been formally disseminated by the U.S. Department of Health \& Human Services nor by the U.S. Department of Energy, and should not be construed to represent any determination or policy of University, Agency, Administration and National Laboratory.
+
+This manual may be incorrect or out-of-date.  The authors assume no responsibility for errors or omissions, or for damages resulting from the use of the information contained herein.
+
+The **remoter** logo comes from the image "Tradtelefon-illustration". Licensed under Public Domain via [Commons](https://commons.wikimedia.org/wiki/File:Tr%C3%A5dtelefon-illustration.png#/media/File:Tr%C3%A5dtelefon-illustration.png).
+
+
+
+# References
+<script language="JavaScript" src="include/headers.js"></script>
