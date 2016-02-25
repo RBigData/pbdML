@@ -4,16 +4,13 @@
 \alias{fld}
 \title{Fisher's Linear Discriminant}
 \usage{
-fld(x, g, checkg = TRUE)
+fld(x, g)
 }
 \arguments{
 \item{x}{The data in the form of a matrix or ddmatrix.}
 
 \item{g}{The group variable in the form of a matrix/vector or a ddmatrix.
 The values should be 0 and 1 exclusively.}
-
-\item{checkg}{Logical; should the values of g be confirmed to exclusively be 0's
-and 1's.}
 }
 \value{
 A list of class 'fld' containing the prior probabilities, group means, 
@@ -23,10 +20,6 @@ are both global, while the other values are distributed.
 \description{
 Compute the 2-class Fisher's linear discriminant either in 
 serial or parallel.
-}
-\details{
-Note that a ddmatrix x and ordinary matrix/vector pairing is possible, 
-but the reverse (matrix/vector x and ddmatrix g) is not.
 }
 \examples{
 \dontrun{

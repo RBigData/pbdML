@@ -15,6 +15,8 @@
 #' @importFrom stats rnorm
 #' @import pbdDMAT
 #' 
+#' @useDynLib pbdML R_check_badvals R_check_groupvar
+#' 
 #' @name pbdML-package
 #' @docType package
 #' @author Drew Schmidt \email{schmidt AT math.utk.edu}, George Ostrouchov, and Wei-Chen Chen.

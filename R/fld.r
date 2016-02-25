@@ -3,18 +3,11 @@
 #' Compute the 2-class Fisher's linear discriminant either in 
 #' serial or parallel.
 #' 
-#' @details
-#' Note that a ddmatrix x and ordinary matrix/vector pairing is possible, 
-#' but the reverse (matrix/vector x and ddmatrix g) is not.
-#' 
 #' @param x
 #' The data in the form of a matrix or ddmatrix.
 #' @param g
 #' The group variable in the form of a matrix/vector or a ddmatrix.
 #' The values should be 0 and 1 exclusively.
-#' @param checkg
-#' Logical; should the values of g be confirmed to exclusively be 0's
-#' and 1's.
 #' 
 #' @return
 #' A list of class 'fld' containing the prior probabilities, group means, 
@@ -39,39 +32,27 @@
 #' @name fld
 #' @rdname fld
 #' @export
-fld <- function(x, g, checkg=TRUE)
+fld <- function(x, g)
 {
-  if (checkg)
-  {
-    if (any(g != 0 && g != 1))
-      comm.stop("argument 'g' must be ")
-  }
-  
   if (!is.ddmatrix(x))
-  {
-    if (is.ddmatrix(g))
-      comm.stop("a matrix/vector 'x' can not be used with a ddmatrix 'g'; see '?fld' for details")
-    
     x <- as.matrix(x)
-  }
-  if (!is.ddmatrix(g))
-    g <- as.matrix(g)
   
+  # if (!all.sametype(x, g))
+  #   comm.stop("arguments 'x' and 'g' must either both be of type 'matrix', or both of type 'ddmatrix'")
   
-  n <- nrow(x)
-  
-  if (n != nrow(g))
+  n <- NROW(x)
+  if (n != NROW(g))
     comm.stop("argument 'g' must be the same length as 'x'")
   
-  ### Get group indices/priors
-  #FIXME use table()
-  if (is.ddmatrix(g))
-  {
-    ind0 <- which(g@Data == 0)
-  }
-  else
-    ind0 <- which(g==0)
+  if (!comm.all(check_groupvar(g)))
+    comm.stop("argument 'g' must be a vector of only 0's and 1's")
   
+  
+  ### Get group indices/priors
+  if (is.ddmatrix(g))
+    g <- as.vector(g) ### FIXME
+  
+  ind0 <- which(submatrix(g) == 0)
   ind1 <- setdiff(1:n, ind0)
   
   prior0 <- length(ind0)/n
@@ -89,6 +70,8 @@ fld <- function(x, g, checkg=TRUE)
   
   ### fld
   mu_sum <- mu0 + mu1
+  if (is.ddmatrix(mu_sum))
+    mu_sum <- t(mu_sum)
   
   w <- solve(cov0 + cov1, mu_sum)
   c <- as.vector(0.5 * crossprod(w, mu_sum))
@@ -114,4 +97,3 @@ print.fld <- function(x, ...)
   
   comm.cat("\nc =", x$c, "\n", quiet=TRUE)
 }
-
