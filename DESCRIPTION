@@ -1,19 +1,7 @@
 Package: pbdML
+Type: Package
 Title: Programming with Big Data -- Machine Learning
 Version: 0.1-0
-Depends:
-    R (>= 3.0.0),
-    pbdMPI (>= 0.3-0),
-    pbdDMAT (>= 0.4-0)
-Imports:
-    stats
-ByteCompile: yes
-NeedsCompilation: yes
-Authors@R: c(person("Drew", "Schmidt", role = c("aut", "cre"), email =
-    "schmidt@math.utk.edu"), 
-    person("George", "Ostrouchov", role = "aut"),
-    person("Wei-Chen", "Chen", role = "aut"), 
-    person("Ahmed", "Moustafa", role="ctb"))
 Description: A collection of machine learning utilities that can
     be run either in serial with native R objects (matrices and vectors)
     or in parallel with distributed matrices from the 'pbdDMAT' package.
@@ -22,6 +10,19 @@ Description: A collection of machine learning utilities that can
     package should primarily be thought of as a demonstration of the
     capabilities of the 'pbdDMAT' package.
 License: BSD 2-clause License + file LICENSE
+Depends:
+    R (>= 3.0.0),
+    pbdMPI (>= 0.3-0),
+    pbdDMAT (>= 0.4-0)
+Imports:
+    stats
+NeedsCompilation: yes
+ByteCompile: yes
+Authors@R: c(person("Drew", "Schmidt", role = c("aut", "cre"), email =
+    "schmidt@math.utk.edu"), 
+    person("George", "Ostrouchov", role = "aut"),
+    person("Wei-Chen", "Chen", role = "aut"), 
+    person("Ahmed", "Moustafa", role="ctb"))
 URL: http://r-pbd.org/
 BugReports: http://group.r-pbd.org/
 MailingList: Please send questions and comments regarding pbdR to
