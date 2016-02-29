@@ -1,3 +1,7 @@
-Release 0.1-0
+Release 0.1-1:
+  * 
+
+Release 0.1-0:
+	* Added fld method.
   * Added "decomp/recomp" function.
   * Added random random svd and random pca.
