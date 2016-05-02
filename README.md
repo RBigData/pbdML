@@ -6,13 +6,7 @@
 * **Author:** See section below.
 
 
-pbdML is an R package containing a collection of machine learning
-utilities.  These functions can be used in serial with native R
-objects (matrices and vectors) or in parallel with distributed
-matrices from the 'pbdDMAT' package.  Here, we focus on ease of
-coding and understanding rather than performance (i.e., all code is
-written in R), and as such this package should primarily be thought
-of as a demonstration of the capabilities of the 'pbdDMAT' package.
+**pbdML** is an R package containing a collection of machine learning utilities.  These functions can be used in serial with native R objects (matrices and vectors) or in parallel with distributed matrices from the **pbdDMAT** package.  Here, we focus on ease of coding and understanding rather than performance (i.e., all code is written in R), and as such this package should primarily be thought of as a demonstration of the capabilities of the **pbdDMAT** package.
 
 
 
@@ -32,16 +26,25 @@ where `x` is either a matrix or a `ddmatrix`.
 
 
 ## Installation
+**pbdML** requires:
 
-pbdML requires
-* A system installation of MPI
 * R version 3.0.0 or higher
-* The pbdMPI, pbdDMAT packages, as well as their dependencies.
+* A system installation of MPI
+* The **pbdMPI** and **pbdDMAT** packages, as well as their dependencies.
 
+<!-- #### Stable Version
 ```r
-library(devtools)
-install_github("wrathematics/pbdML")
+install.packages("pbdCS")
+``` -->
+
+#### Development Version
+```r
+### Pick your preference
+devtools::install_github("RBigData/pbdML")
+ghit::install_github("RBigData/pbdML")
+remotes::install_github("RBigData/pbdML")
 ```
+
 
 
 
@@ -51,4 +54,3 @@ pbdML is authored and maintained by members of the pbdR core team:
 * Drew Schmidt
 * George Ostrouchov
 * Wei-Chen Chen
-
