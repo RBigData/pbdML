@@ -19,7 +19,7 @@ Imports:
 NeedsCompilation: yes
 ByteCompile: yes
 Authors@R: c(person("Drew", "Schmidt", role = c("aut", "cre"), email =
-    "schmidt@math.utk.edu"), 
+    "wrathematics@gmail.com"), 
     person("George", "Ostrouchov", role = "aut"),
     person("Wei-Chen", "Chen", role = "aut"), 
     person("Ahmed", "Moustafa", role="ctb"))
@@ -27,5 +27,5 @@ URL: http://r-pbd.org/
 BugReports: http://group.r-pbd.org/
 MailingList: Please send questions and comments regarding pbdR to
     RBigData@gmail.com
-Maintainer: Drew Schmidt <schmidt@math.utk.edu>
+Maintainer: Drew Schmidt <wrathematics@gmail.com>
 RoxygenNote: 5.0.1
