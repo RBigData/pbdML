@@ -4,6 +4,8 @@ author: "Drew Schmidt"
 date: "`r Sys.Date()`"
 output:
   html_document:
+    includes:
+      in_header: include/header.html
     fig_caption: true
     toc: true
     number_sections: true
@@ -29,11 +31,36 @@ You can install the stable version from CRAN using the usual `install.packages()
 install.packages("pbdML")
 ```
 
-The development version is maintained on GitHub.  You can install this version using the `devtools` package:
+The development version is maintained on GitHub, and can easily be installed by any of the packages that offer installations from GitHub:
 
 ```r
+### Pick your preference
 devtools::install_github("RBigData/pbdML")
+ghit::install_github("RBigData/pbdML")
+remotes::install_github("RBigData/pbdML")
 ```
+
+
+# Dimension Reduction
+
+<div class="centerfig">
+  <img
+    src="./pics/flatland.png" 
+    class="captioned"
+    alt=""
+    title="Diagram for using relays with remoter">
+  <div class="caption">"Be patient, for the world is broad and wide."  Image from <a href="http://downlode.org/Etext/flatland/contents.html">*Flatland*</a></div>
+</div>
+
+
+## FLD
+
+
+## Randomized SVD/PCA
+
+
+## Decomp/Recomp
+
 
 
 
