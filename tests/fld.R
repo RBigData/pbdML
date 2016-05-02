@@ -14,8 +14,8 @@ test <- fld(x, g)$c
 stopifnot(all.equal(truth, test))
 
 
-dx = as.ddmatrix(x)
-dg = as.ddmatrix(g)
+#dx = as.ddmatrix(x)
+#dg = as.ddmatrix(g)
 
-test <- fld(dx, dg)$c
-stopifnot(all.equal(truth, test))
+#test <- fld(dx, dg)$c
+#stopifnot(all.equal(truth, test))
