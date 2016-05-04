@@ -16,13 +16,17 @@ Depends:
     pbdDMAT (>= 0.4-0)
 Imports:
     stats
+Suggests: 
+    knitr, 
+    rmarkdown
+VignetteBuilder: knitr
 NeedsCompilation: yes
 ByteCompile: yes
 Authors@R: c(person("Drew", "Schmidt", role = c("aut", "cre"), email =
     "wrathematics@gmail.com"), 
     person("George", "Ostrouchov", role = "aut"),
     person("Wei-Chen", "Chen", role = "aut"), 
-    person("Ahmed", "Moustafa", role="ctb"))
+    person("Ahmed", "Moustafa", role="ctb", comment="described decomp/recomp problem"))
 URL: http://r-pbd.org/
 BugReports: http://group.r-pbd.org/
 MailingList: Please send questions and comments regarding pbdR to
