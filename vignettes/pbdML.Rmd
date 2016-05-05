@@ -18,13 +18,15 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
 ---
 
+
 # Introduction
 
-[[@pbdR2012]]
+[@pbdR2012]
+[@pbdDMAT]
+[@pbdMPI]
 
 
 ## Installation
-
 You can install the stable version from CRAN using the usual `install.packages()`:
 
 ```r
@@ -41,6 +43,9 @@ remotes::install_github("RBigData/pbdML")
 ```
 
 
+
+
+
 # Dimension Reduction
 
 <div class="centerfig">
@@ -54,12 +59,104 @@ remotes::install_github("RBigData/pbdML")
 
 
 ## FLD
+TODO
 
 
 ## Randomized SVD/PCA
 
+The singular value decomposition (SVD) is a matrix factorization, with numerous applications [@TODO].  
+
+$$
+A = U \Sigma V^T
+$$
+
+An application of the SVD well-known to stasticians is principal components analysis (PCA) [@rencher].
+
+A common technique is to compute the first 2 or 3 principal components in order to visualize high-dimensional data.
+
+Estimation
+[@halko2011finding]
+
+To show how this works, we generate a $30000\times 5000$ matrix with 3 different separate clusters:
+
+```r
+gen <- function(m, n, mean, sd) matrix(rnorm(m*n, mean, sd), m, n)
+
+m <- 10000
+n <- 5000
+sd <- 10
+
+x1 <- gen(m, n, 0, sd)
+x2 <- gen(m, n, 4, sd)
+x3 <- gen(m, n, -2, sd)
+
+x <- rbind(x1, x2, x3)
+```
+
+
+
+```r
+library(pbdML)
+system.time({
+  pc <- rpca(x, k=2)
+})
+##  user  system elapsed 
+## 8.908   4.028  11.674 
+```
+
+Compare this to the full PCA computation:
+
+```r
+system.time({
+  pc.full <- prcomp(x)
+})
+##    user  system elapsed 
+## 644.632 159.220 240.094 
+```
+
+The size comparisons are even more striking:
+
+```r
+library(memuse)
+
+memuse(x)
+## 1.118 GiB
+memuse(pc)
+## 548.773 KiB
+memuse(pc.full)
+## 1.304 GiB
+```
+
+<!-- ```r
+barplot(pc$sdev)
+```
+
+<center>
+<img src="pics/svd_sdev.png">
+</center> -->
+
+```r
+plot(pc$x[, 1], pc$x[, 2])
+```
+
+<center>
+<img src="pics/svd_clusters.png">
+</center>
+
+
 
 ## Decomp/Recomp
+One day on Twitter, someone asked a very interesting question:
+
+<center>
+<img src="pics/tweet1.png">
+</center>
+
+After some requests for clarification, the problem was stated as follows:
+
+<center>
+<img src="pics/tweet2.png">
+</center>
 
 
 
