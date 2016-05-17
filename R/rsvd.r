@@ -74,11 +74,10 @@ rsvd <- function(x, k=1, q=3, retu=TRUE, retvt=TRUE)
   
   Y <- x %*% Omega
   Q <- qr.Q(qr(Y))
-  tx <- t(x)
   
   for (i in 1:q)
   {
-    Y <- tx %*% Q
+    Y <- crossprod(x, Q)
     Q <- qr.Q(qr(Y))
     Y <- x %*% Q
     Q <- qr.Q(qr(Y))
@@ -86,7 +85,7 @@ rsvd <- function(x, k=1, q=3, retu=TRUE, retvt=TRUE)
   
   
   ### Stage B
-  B <- t(Q) %*% x
+  B <- crossprod(Q, x)
   
   if (!retu)
     nu <- 0
