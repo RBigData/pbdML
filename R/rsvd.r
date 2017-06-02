@@ -68,9 +68,9 @@ rsvd <- function(x, k=1, q=3, retu=TRUE, retvt=TRUE)
   n <- ncol(x)
   
   if (class(x) == "matrix")
-    Omega <- matrix(rnorm(n*2L*k), nrow=n, ncol=2L*k)
+    Omega <- matrix(runif(n*2L*k), nrow=n, ncol=2L*k)
   else if (class(x) == "ddmatrix")
-    Omega <- ddmatrix("rnorm", nrow=n, ncol=2L*k, bldim=x@bldim, ICTXT=x@ICTXT)
+    Omega <- ddmatrix("runif", nrow=n, ncol=2L*k, bldim=x@bldim, ICTXT=x@ICTXT)
   
   Y <- x %*% Omega
   Q <- qr.Q(qr(Y))
@@ -135,4 +135,3 @@ rsvd <- function(x, k=1, q=3, retu=TRUE, retvt=TRUE)
   
   return( svd )
 }
-
