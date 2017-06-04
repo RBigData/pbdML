@@ -3,7 +3,7 @@
 S3method(print,fld)
 export(decomp_recomp)
 export(fld)
-export(robsvd)
+export(robpca)
 export(rpca)
 export(rsvd)
 import(pbdDMAT)

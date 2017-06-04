@@ -41,7 +41,7 @@ sv_thresh = function(X, tau)
 
 
 
-#' robsvd
+#' robpca
 #' 
 #' Implementation of the robust pca algorithm.
 #' 
@@ -73,7 +73,7 @@ sv_thresh = function(X, tau)
 #' Drew Schmidt
 #' 
 #' @export
-robsvd = function(M, delta=1e-7, maxiter=1000)
+robpca = function(M, delta=1e-7, maxiter=1000)
 {
   ### I love dynamic typing
   assert.type(delta, "numeric")
