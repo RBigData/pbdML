@@ -58,7 +58,7 @@ sv_thresh = function(X, tau)
 #' Maximum number of iterations. Should at least be a few hundred.
 #' 
 #' @references
-#' Candès, E.J., Li, X., Ma, Y. and Wright, J., 2011. Robust principal component
+#' Candes, E.J., Li, X., Ma, Y. and Wright, J., 2011. Robust principal component
 #' analysis?. Journal of the ACM (JACM), 58(3), p.11.
 #' 
 #' @examples
