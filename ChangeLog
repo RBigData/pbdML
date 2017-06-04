@@ -1,4 +1,5 @@
 Release 0.1-1 (//):
+  * Added robsvd().
   * Added vignette.
   * Fixed broken tests.
 
