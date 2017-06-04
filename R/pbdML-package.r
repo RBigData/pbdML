@@ -11,8 +11,8 @@
 #' 
 #' This package requires an MPI library (OpenMPI, MPICH2, or LAM/MPI).
 #' 
-#' @importFrom pbdMPI comm.stop comm.print comm.cat comm.all
-#' @importFrom stats rnorm
+#' @importFrom pbdMPI allreduce comm.stop comm.print comm.cat comm.all
+#' @importFrom stats runif
 #' @import pbdDMAT
 #' 
 #' @useDynLib pbdML R_check_badvals R_check_groupvar R_one_norm R_shrink_op
