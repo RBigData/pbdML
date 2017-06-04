@@ -1,3 +1,6 @@
+# Reference: "Robust Principal Component Analysis?" https://arxiv.org/pdf/0912.3599.pdf
+
+
 ## \mathcal{S} from the paper
 shrink_op = function(X, tau)
 {
@@ -10,6 +13,7 @@ shrink_op = function(X, tau)
 sv_thresh = function(X, tau)
 {
   decomp = La.svd(X)
+  
   sigma = shrink_op(decomp$d, tau)
   U = decomp$u
   Vt = decomp$vt
@@ -64,16 +68,23 @@ robsvd = function(M, delta=1e-7, maxiter=1000)
   conv = FALSE
   iter = 0L
   
+  ub = delta * norm(M, "F")
+  
   while (!conv && iter < maxiter)
   {
-    L = sv_thresh(M - S + 1/mu*Y, 1/mu)
+    if (iter == 0)
+      L = sv_thresh(M, 1/mu)
+    else
+      L = sv_thresh(M - S + Y, 1/mu)
     
-    S = shrink_op(M - L + 1/mu*Y, lambda/mu)
+    tmp = M - L
+    S = shrink_op(tmp + Y, lambda/mu)
     
-    Y = Y + mu*(M - L - S)
+    tmp = tmp - S
+    Y = Y + tmp
     
-    term = norm(M - L - S, "F") / norm(M, "F")
-    conv = (term <= delta)
+    term = norm(tmp, "F")
+    conv = (term <= ub)
     iter = iter + 1L
   }
   
