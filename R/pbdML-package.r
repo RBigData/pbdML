@@ -15,7 +15,7 @@
 #' @importFrom stats rnorm
 #' @import pbdDMAT
 #' 
-#' @useDynLib pbdML R_check_badvals R_check_groupvar
+#' @useDynLib pbdML R_check_badvals R_check_groupvar R_one_norm R_shrink_op
 #' 
 #' @name pbdML-package
 #' @docType package
