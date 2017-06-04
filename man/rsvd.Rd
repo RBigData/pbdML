@@ -33,14 +33,13 @@ rsvd(x)
 }
 
 }
-\author{
-George Ostrouchov and Drew Schmidt
-}
 \references{
 Halko, Martinsson, and Tropp. 2011. Finding structure with 
 randomness: probabilistic algorithms for constructing approximate
 matrix decompositions. SIAM Review 53 217-288.
 }
+\author{
+George Ostrouchov and Drew Schmidt
+}
 \keyword{PCA}
 \keyword{SVD}
-

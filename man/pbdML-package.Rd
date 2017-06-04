@@ -17,11 +17,10 @@ TODO
 
 This package requires an MPI library (OpenMPI, MPICH2, or LAM/MPI).
 }
-\author{
-Drew Schmidt \email{schmidt AT math.utk.edu}, George Ostrouchov, and Wei-Chen Chen.
-}
 \references{
 Programming with Big Data in R Website: \url{http://r-pbd.org/}
 }
+\author{
+Drew Schmidt \email{schmidt AT math.utk.edu}, George Ostrouchov, and Wei-Chen Chen.
+}
 \keyword{Package}
-
