@@ -23,6 +23,16 @@ assert.nonneg <- function(x, nm=deparse(substitute(x)))
 
 
 
+assert.positive <- function(x, nm=deparse(substitute(x)))
+{
+  if (x <= 0)
+    pbdMPI::comm.stop(paste0("argument '", nm, "' must be > 0; have ", nm, "=", x), call.=FALSE)
+  
+  return(invisible(TRUE))
+}
+
+
+
 isint <- function(x)
 {
   epsilon <- 1e-8
@@ -47,6 +57,17 @@ assert.natnum <- function(x)
   nm <- deparse(substitute(x))
   assert.wholenum(x, nm=nm)
   assert.nonneg(x, nm=nm)
+  
+  return(invisible(TRUE))
+}
+
+
+
+assert.posint <- function(x)
+{
+  nm <- deparse(substitute(x))
+  assert.wholenum(x, nm=nm)
+  assert.positive(x, nm=nm)
   
   return(invisible(TRUE))
 }
