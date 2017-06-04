@@ -16,10 +16,6 @@ Depends:
     pbdDMAT (>= 0.4-0)
 Imports:
     stats
-Suggests: 
-    knitr, 
-    rmarkdown
-VignetteBuilder: knitr
 NeedsCompilation: yes
 ByteCompile: yes
 Authors@R: c(person("Drew", "Schmidt", role = c("aut", "cre"), email =
