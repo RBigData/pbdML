@@ -46,14 +46,16 @@ sv_thresh = function(X, tau)
 #' Implementation of the robust pca algorithm.
 #' 
 #' @description
-#' TODO
+#' The optimization problem is solved by an alternating directions technique.
 #' 
 #' @param M
-#' TODO
+#' The input data, stored as a numeric matrix or ddmatrix.
 #' @param delta
-#' TODO
+#' Numeric termination criteria. A smaller (closer to 0) value will require more
+#' iterations. See the summary following the Algorithm 1 listing in the
+#' referenced paper for details.
 #' @param maxiter
-#' TODO
+#' Maximum number of iterations. Should at least be a few hundred.
 #' 
 #' @references
 #' Candès, E.J., Li, X., Ma, Y. and Wright, J., 2011. Robust principal component

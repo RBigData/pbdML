@@ -7,14 +7,16 @@
 robsvd(M, delta = 1e-07, maxiter = 1000)
 }
 \arguments{
-\item{M}{TODO}
+\item{M}{The input data, stored as a numeric matrix or ddmatrix.}
 
-\item{delta}{TODO}
+\item{delta}{Numeric termination criteria. A smaller (closer to 0) value will require more
+iterations. See the summary following the Algorithm 1 listing in the
+referenced paper for details.}
 
-\item{maxiter}{TODO}
+\item{maxiter}{Maximum number of iterations. Should at least be a few hundred.}
 }
 \description{
-TODO
+The optimization problem is solved by an alternating directions technique.
 }
 \details{
 Implementation of the robust pca algorithm.
@@ -27,6 +29,10 @@ M = matrix(rnorm(m*n), m)
 robsvd(M)
 }
 
+}
+\references{
+Candès, E.J., Li, X., Ma, Y. and Wright, J., 2011. Robust principal component
+analysis?. Journal of the ACM (JACM), 58(3), p.11.
 }
 \author{
 Drew Schmidt
