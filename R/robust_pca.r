@@ -60,7 +60,7 @@ robsvd = function(M, delta=1e-7, maxiter=1000)
   
   lambda = 1/sqrt(max(n1, n2))
   
-  mu = 0.25 * n1*n2 / norm(M, "1")
+  mu = 0.25 * n1*n2 / sum(abs(M))
   
   S = matrix(0, n1, n2)
   Y = matrix(0, n1, n2)
