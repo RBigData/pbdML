@@ -1,10 +1,27 @@
 # Reference: "Robust Principal Component Analysis?" https://arxiv.org/pdf/0912.3599.pdf
 
+# sum(abs(X))
+one_norm = function(X)
+{
+  if (is.ddmatrix(X))
+  {
+    ret = .Call(R_one_norm, X@Data)
+    allreduce(ret)
+  }
+  else
+    .Call(R_one_norm, X)
+}
 
-## \mathcal{S} from the paper
+
+
+## \mathcal{S} from the paper - sign(X) * pmax(abs(X) - tau, 0)
 shrink_op = function(X, tau)
 {
-  sign(X) * pmax(abs(X) - tau, 0)
+  # NOTE: this modifies the memory in place, which is potentially very dangerous
+  if (is.ddmatrix(X))
+    .Call(R_shrink_op, X@Data, tau)
+  else
+    .Call(R_shrink_op, X, tau)
 }
 
 
@@ -14,7 +31,8 @@ sv_thresh = function(X, tau)
 {
   decomp = La.svd(X)
   
-  sigma = shrink_op(decomp$d, tau)
+  sigma = decomp$d
+  shrink_op(sigma, tau)
   U = decomp$u
   Vt = decomp$vt
   
@@ -37,7 +55,7 @@ sv_thresh = function(X, tau)
 #' @param maxiter
 #' TODO
 #' 
-#' @refreences
+#' @references
 #' Candès, E.J., Li, X., Ma, Y. and Wright, J., 2011. Robust principal component
 #' analysis?. Journal of the ACM (JACM), 58(3), p.11.
 #' 
@@ -55,12 +73,26 @@ sv_thresh = function(X, tau)
 #' @export
 robsvd = function(M, delta=1e-7, maxiter=1000)
 {
+  ### I love dynamic typing
+  assert.type(delta, "numeric")
+  assert.posint(maxiter)
+  
+  if (class(x) != "ddmatrix")
+  {
+    x <- as.matrix(x)
+    
+    if (!is.double(M))
+      storage.mode(M) <- "double"
+  }
+  
+  
+  ### the actual work
   n1 = nrow(M)
   n2 = ncol(M)
   
   lambda = 1/sqrt(max(n1, n2))
   
-  mu = 0.25 * n1*n2 / sum(abs(M))
+  mu = 0.25 * n1*n2 / one_norm(M)
   
   S = matrix(0, n1, n2)
   Y = matrix(0, n1, n2)
@@ -78,7 +110,8 @@ robsvd = function(M, delta=1e-7, maxiter=1000)
       L = sv_thresh(M - S + Y, 1/mu)
     
     tmp = M - L
-    S = shrink_op(tmp + Y, lambda/mu)
+    S = tmp + Y
+    shrink_op(S, lambda/mu)
     
     tmp = tmp - S
     Y = Y + tmp
