@@ -60,13 +60,13 @@ TODO
 \subsection{Randomized SVD/PCA}\label{randomized-svdpca}
 
 The singular value decomposition (SVD) is a matrix factorization, with
-numerous applications {[}@TODO{]}.
+numerous applications.
 
 \[
 A = U \Sigma V^T
 \]
 
-An application of the SVD well-known to stasticians is principal
+An application of the SVD well-known to statisticians is principal
 components analysis (PCA) \cite{rencher}.
 
 A common technique is to compute the first 2 or 3 principal components
@@ -146,7 +146,7 @@ follows:
 
 \section{Legal}\label{legal}
 
-© 2016--2017 Drew Schmidt.
+\copyright 2016--2017 Drew Schmidt.
 
 Permission is granted to make and distribute verbatim copies of this
 vignette and its source provided the copyright notice and this
