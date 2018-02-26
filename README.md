@@ -1,6 +1,6 @@
 # pbdML
 
-* **Version:** 0.1-1
+* **Version:** 0.1-2
 * **URL**: https://github.com/RBigData/pbdML
 * **License:** [![License](http://img.shields.io/badge/license-BSD%202--Clause-orange.svg?style=flat)](http://opensource.org/licenses/BSD-2-Clause)
 * **Author:** See section below.
