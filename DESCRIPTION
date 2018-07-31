@@ -1,7 +1,7 @@
 Package: pbdML
 Type: Package
 Title: Programming with Big Data -- Machine Learning
-Version: 0.1-1
+Version: 0.1-2
 Description: A collection of machine learning utilities that can
     be run either in serial with native R objects (matrices and vectors)
     or in parallel with distributed matrices from the 'pbdDMAT' package.
@@ -28,4 +28,4 @@ BugReports: http://group.r-pbd.org/
 MailingList: Please send questions and comments regarding pbdR to
     RBigData@gmail.com
 Maintainer: Drew Schmidt <wrathematics@gmail.com>
-RoxygenNote: 6.0.1
+RoxygenNote: 5.0.1
