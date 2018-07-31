@@ -39,9 +39,6 @@ install.packages("pbdCS")
 
 #### Development Version
 ```r
-### Pick your preference
-devtools::install_github("RBigData/pbdML")
-ghit::install_github("RBigData/pbdML")
 remotes::install_github("RBigData/pbdML")
 ```
 

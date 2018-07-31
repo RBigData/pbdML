@@ -40,9 +40,6 @@ The development version is maintained on GitHub, and can easily be
 installed by any of the packages that offer installations from GitHub:
 
 \begin{lstlisting}
-### Pick your preference
-devtools::install_github("RBigData/pbdML")
-ghit::install_github("RBigData/pbdML")
 remotes::install_github("RBigData/pbdML")
 \end{lstlisting}
 
