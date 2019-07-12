@@ -79,9 +79,9 @@ robpca = function(M, delta=1e-7, maxiter=1000)
   assert.type(delta, "numeric")
   assert.posint(maxiter)
   
-  if (class(x) != "ddmatrix")
+  if (class(M) != "ddmatrix")
   {
-    x <- as.matrix(x)
+    M <- as.matrix(M)
     
     if (!is.double(M))
       storage.mode(M) <- "double"
@@ -96,8 +96,17 @@ robpca = function(M, delta=1e-7, maxiter=1000)
   
   mu = 0.25 * n1*n2 / one_norm(M)
   
-  S = matrix(0, n1, n2)
-  Y = matrix(0, n1, n2)
+  if (is.ddmatrix(M))
+  {
+    ictxt = ICTXT(M)
+    S = pbdDMAT::ddmatrix(0, n1, n2, ICTXT=ictxt)
+    Y = pbdDMAT::ddmatrix(0, n1, n2, ICTXT=ictxt)
+  }
+  else
+  {
+    S = matrix(0, n1, n2)
+    Y = matrix(0, n1, n2)
+  }
   
   conv = FALSE
   iter = 0L
